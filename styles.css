@@ -27,6 +27,14 @@ body {
   gap: 5rem;
 }
 
+#roll_dice {
+  font-size: 1.4rem;
+}
+
+#dice_output {
+  font-family: monospace;
+}
+
 .score_box {
   justify-content: space-between;
   display: flex;
@@ -60,5 +68,24 @@ body {
 
 #celebration {
   font-size: 18px;
-  color: rgrgb(7, 119, 43);
+  color: rgb(7, 119, 43);
+}
+
+#play_again {
+  margin: 0 auto;
+  padding: 0.4rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  background-color: rgb(132, 197, 81);
+  cursor: pointer;
+}
+
+#play_again:hover {
+  background-color: rgb(146, 214, 93);
+}
+
+.enter_key {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  color: rgb(74, 74, 74);
 }

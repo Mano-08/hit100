@@ -1,3 +1,7 @@
+window.alert(
+  "First player to score 100 wins. Player 1 can press key 'Q' to roll a dice while Player 2 can press key 'P' for the same."
+);
+
 let player1s_turn = true;
 let player1s_score = 0;
 let player2s_score = 0;
@@ -23,6 +27,8 @@ function post_win_handler() {
 function handlePlayAgain() {
   player1s_score = 0;
   player2s_score = 0;
+  dice_output.innerText = "";
+  announcement_ele.innerHTML = "";
   player1_score_ele.innerText = player1s_score;
   player2_score_ele.innerText = player2s_score;
   player2_play_button.style.display = "block";
@@ -31,13 +37,14 @@ function handlePlayAgain() {
 }
 
 function handlePlay(player) {
+  if (player1s_score === 100 || player2s_score === 100) {
+    return;
+  }
+
   if (player === "player1") {
     if (!player1s_turn) {
       announcement_ele.innerHTML =
         "<span id='warning'>!! Player 2's  turn</span>";
-      setTimeout(() => {
-        announcement_ele.innerHTML = "";
-      }, 2000);
       return;
     }
 
@@ -50,17 +57,13 @@ function handlePlay(player) {
       announcement_ele.innerHTML =
         "<span id='celebration'>Player 1 WON!</span>";
       post_win_handler();
-    } else {
-      player1s_score += dice_roll_value;
-      player1_score_ele.innerText = player1s_score;
     }
+    player1s_score += dice_roll_value;
+    player1_score_ele.innerText = player1s_score;
   } else {
     if (player1s_turn) {
       announcement_ele.innerHTML =
         "<span id='warning'>!! Player 1's  turn</span>";
-      setTimeout(() => {
-        announcement_ele.innerHTML = "";
-      }, 2000);
       return;
     }
 
@@ -74,18 +77,21 @@ function handlePlay(player) {
         "<span id='celebration'>Player 2 WON!</span>";
 
       post_win_handler();
-    } else {
-      player2s_score += dice_roll_value;
-      player2_score_ele.innerText = player2s_score;
     }
+    player2s_score += dice_roll_value;
+    player2_score_ele.innerText = player2s_score;
   }
 }
 
 function handleKeyDown(e) {
-  console.log(e);
+  if (e.keyCode === 81) {
+    handlePlay("player1");
+  } else if (e.keyCode === 80) {
+    handlePlay("player2");
+  }
 }
 
 player1_play_button.addEventListener("click", () => handlePlay("player1"));
 player2_play_button.addEventListener("click", () => handlePlay("player2"));
-document.addEventListener("keydown", (e) => handleKeyDown(e.target));
+document.addEventListener("keydown", (e) => handleKeyDown(e));
 play_again_ele.addEventListener("click", () => handlePlayAgain());

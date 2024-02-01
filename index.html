@@ -13,25 +13,29 @@
       <div id="players">
         <div class="player">
           <img src="./images/bunny.jpg" class="avatar" alt="player1 avatar" />
-          <p>player1</p>
+          <h3>player1</h3>
           <div class="score_box">
             score:
             <p id="player1_score"></p>
           </div>
-          <button id="player1_play" class="play_button">play</button>
+          <button id="player1_play" class="play_button">
+            play <span class="enter_key">&#9166; Q</span>
+          </button>
         </div>
         <div class="player">
           <img src="./images/duck.jpg" class="avatar" alt="player1 avatar" />
-          <p>player2</p>
+          <h3>player2</h3>
           <div class="score_box">
             score:
             <p id="player2_score"></p>
           </div>
-          <button id="player2_play" class="play_button">play</button>
+          <button id="player2_play" class="play_button">
+            play <span class="enter_key">&#9166; P</span>
+          </button>
         </div>
       </div>
 
-      <p>dice output: <span id="dice_output"></span></p>
+      <p id="roll_dice">dice output: <span id="dice_output"></span></p>
       <p id="announcement"></p>
 
       <button id="play_again">play again</button>
