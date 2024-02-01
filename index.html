@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hit 100</title>
+    <script defer src="./app.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+  <body>
+    <div id="main_container">
+      <h1>Hit 100</h1>
+      <div id="players">
+        <div class="player">
+          <img src="./images/bunny.jpg" class="avatar" alt="player1 avatar" />
+          <p>player1</p>
+          <div class="score_box">
+            score:
+            <p id="player1_score"></p>
+          </div>
+          <button id="player1_play" class="play_button">play</button>
+        </div>
+        <div class="player">
+          <img src="./images/duck.jpg" class="avatar" alt="player1 avatar" />
+          <p>player2</p>
+          <div class="score_box">
+            score:
+            <p id="player2_score"></p>
+          </div>
+          <button id="player2_play" class="play_button">play</button>
+        </div>
+      </div>
+
+      <p>dice output: <span id="dice_output"></span></p>
+      <p id="announcement"></p>
+
+      <button id="play_again">play again</button>
+    </div>
+  </body>
+</html>

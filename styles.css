@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Manrope:wght@200;300;400;500;600;700;800&family=Pixelify+Sans&family=Playfair+Display:wght@400;500;600&family=Raleway:wght@300;400;600;800&family=Sora:wght@200;300;400;500&display=swap");
+
+* {
+  font-family: "Pixelify Sans", sans-serif;
+}
+body {
+  margin: 0;
+  font-size: 16px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(227, 227, 227);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main_container {
+  text-align: center;
+  background-color: rgb(150, 163, 208);
+  padding: 3rem;
+  border-radius: 4px;
+}
+
+#players {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.score_box {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.avatar {
+  height: 120px;
+  width: 120px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.play_button {
+  padding: 0.2rem 2rem;
+  border-radius: 4px;
+  background-color: rgb(209, 209, 209);
+  cursor: pointer;
+}
+.play_button:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+#warning {
+  font-size: 18px;
+  color: rgb(119, 7, 7);
+}
+
+#celebration {
+  font-size: 18px;
+  color: rgrgb(7, 119, 43);
+}
