@@ -37,11 +37,12 @@ function handlePlayAgain() {
 }
 
 function handlePlay(player) {
-  announcement_ele.innerHTML = "";
 
   if (player1s_score === 100 || player2s_score === 100) {
     return;
   }
+  
+  announcement_ele.innerHTML = "";
 
   if (player === "player1") {
     if (!player1s_turn) {
