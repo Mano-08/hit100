@@ -12,6 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 #main_container {
@@ -19,6 +20,19 @@ body {
   background-color: rgb(150, 163, 208);
   padding: 3rem;
   border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  #main_container {
+    padding: 1rem;
+  }
+  #players {
+    gap: 3rem;
+  }
+
+  .enter_key {
+    display: inline-block;
+  }
 }
 
 #players {
